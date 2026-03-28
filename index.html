@@ -1,69 +1,45 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flowboard</title>
-    <style>
-        /* Add styles for collapsible task details and subtasks */
-        .task {
-            border: 1px solid #ccc;
-            margin: 10px;
-            padding: 10px;
-        }
-        .subtask {
-            margin-left: 20px;
-        }
-        .collapsible {
-            cursor: pointer;
-        }
-        .content {
-            display: none;
-        }
-    </style>
-    <script>
-        function toggleCollapsible(element) {
-            var content = element.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Flowboard</h1>
-    <div class="task"> 
-        <span class="collapsible" onclick="toggleCollapsible(this)">Task Title</span>
-        <div class="content">
-            <p>Task description...</p>
-            <div class="subtask">
-                <h3>Subtasks</h3>
-                <ul>
-                    <li>Subtask 1</li>
-                    <li>Subtask 2</li>
-                </ul>
+    <header>
+        <h1>Flowboard</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tasks</a></li>
+                <li><a href="#">Subtasks</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="tasks">
+            <h2>Tasks</h2>
+            <div class="kanban-view" id="main-kanban">
+                <!-- Main Kanban View -->
             </div>
-        </div>
-    </div>
-    <div class="kanban-view">
-        <h3>Subtasks Kanban View</h3>
-        <div class="subtask-column">
-            <h4>To Do</h4>
-            <ul>
-                <li>Subtask 1</li>
-            </ul>
-        </div>
-        <div class="subtask-column">
-            <h4>In Progress</h4>
-            <ul>
-                <li>Subtask 2</li>
-            </ul>
-        </div>
-        <div class="subtask-column">
-            <h4>Done</h4>
-            <ul>
-                <li>Subtask 3</li>
-            </ul>
-        </div>
-    </div>
+        </section>
+        <section id="subtasks">
+            <h2>Subtasks</h2>
+            <div class="kanban-view" id="subtasks-kanban">
+                <!-- Subtasks Kanban View -->
+                <h3>Subtasks</h3>
+                <div class="subtask">
+                    <input type="checkbox">
+                    <label>Subtask 1</label>
+                </div>
+                <div class="subtask">
+                    <input type="checkbox">
+                    <label>Subtask 2</label>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
